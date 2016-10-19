@@ -1,0 +1,45 @@
+<!doctype html>
+<html class="no-js" lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Star Wars API - Website</title>
+        <!-- STYLESHEETS -->
+        <link rel="stylesheet" href="css/foundation.css">
+        <link rel="stylesheet" href="css/app.css">
+    </head>
+
+    <body>
+        <h1 class="hidden">SWAPI Website</h1>
+
+        <!-- AJAX FIRST CALL -->
+        <div class="row">
+            <div class="small-12 medium-6 columns">
+                <div id="results">
+                </div>
+            </div>
+        </div>
+
+        <!-- AJAX SECOND CALL -->
+        <div class="row">
+            <div class="small-12 medium-6 columns">
+                <div id="display">
+                    <img id ="moviePoster" src="" alt="" />
+                    <h1 id="movieTitle"></h1>
+                    <p id="Episode"></p>
+                    <p id="description"></p>
+                    <p id="director"></p>
+                    <p id="producer"></p>
+                    <p id="releaseDate"></p>
+                </div>
+            </div>
+        </div>
+
+        <!-- JAVASCRIPTS -->
+        <script src="js/vendor/jquery.js"></script>
+        <script src="js/vendor/what-input.js"></script>
+        <script src="js/vendor/foundation.js"></script>
+        <script src="js/app.js"></script>
+    </body>
+</html>
