@@ -31,8 +31,8 @@ gulp.task('js', function() {
 // Watch our files
 gulp.task('watch', function() {
 	refresh.listen()
-	gulp.watch('scss/*.scss', ['scss'])
 	gulp.watch('*.html', ['html'])
+	gulp.watch('scss/*.scss', ['scss'])
 	gulp.watch('js/*.js', ['js'])
 });
 

@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Star Wars API - Website</title>
+        <title>Star Wars Character Guide</title>
         <!-- STYLESHEETS -->
         <link rel="stylesheet" href="css/foundation.css">
         <link rel="stylesheet" href="css/app.css">
@@ -13,33 +13,35 @@
     <body>
         <h1 class="hidden">SWAPI Website</h1>
 
-        <!-- AJAX FIRST CALL -->
-        <div class="row">
-            <div class="small-12 medium-6 columns">
-                <div id="results">
+        <section id="mainContent">
+            <h2 class="hidden">Star Wars Content</h2>
+            <!-- AJAX FIRST CALL -->
+            <div class="row">
+                <div class="small-12 medium-6 columns">
+                    <button id="loadCharacters"></button>
+                    <ul id="results"></ul>
                 </div>
-            </div>
-        </div>
 
-        <!-- AJAX SECOND CALL -->
-        <div class="row">
-            <div class="small-12 medium-6 columns">
-                <div id="display">
-                    <img id ="moviePoster" src="" alt="" />
-                    <h1 id="movieTitle"></h1>
-                    <p id="Episode"></p>
-                    <p id="description"></p>
-                    <p id="director"></p>
-                    <p id="producer"></p>
-                    <p id="releaseDate"></p>
+                <!-- AJAX SECOND CALL -->
+                <div class="small-12 medium-6 columns">
+                    <div id="characterInfo">
+                        <img class="moviePoster" src="" alt="" />
+                        <p class="movieTitle"><p>
+                        <p class="episode"></p>
+                        <p class="openingCrawl"></p>
+                        <p class="director"></p>
+                        <p class="producer"></p>
+                        <p class="releaseDate"></p>
+                    </div>
                 </div>
             </div>
-        </div>
+        </section>
 
         <!-- JAVASCRIPTS -->
         <script src="js/vendor/jquery.js"></script>
         <script src="js/vendor/what-input.js"></script>
         <script src="js/vendor/foundation.js"></script>
+        <script src="js/utils.js"></script>
         <script src="js/app.js"></script>
     </body>
 </html>
