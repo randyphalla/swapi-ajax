@@ -8,33 +8,52 @@
         <!-- STYLESHEETS -->
         <link rel="stylesheet" href="css/foundation.css">
         <link rel="stylesheet" href="css/app.css">
+        <link href="https://fonts.googleapis.com/css?family=Raleway:300,400" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
     </head>
 
     <body>
         <h1 class="hidden">SWAPI Website</h1>
 
+<!--         <header id="header">
+        <h2 class="hidden">Menu</h2>
+	        <div class="row">
+	        	<div class="small-12 columns">
+                    <figure>
+                        <img src="images/starwars-logo.png" alt="logo"/>
+                    </figure>
+	        	</div>
+	        </div>
+        </header> -->
+
         <section id="mainContent">
             <h2 class="hidden">Star Wars Content</h2>
-            <!-- AJAX FIRST CALL -->
-            <div class="row">
-                <div class="small-12 medium-6 columns">
-                    <button id="loadCharacters"></button>
-                    <ul id="results"></ul>
-                </div>
 
+            <div class="row resultsCont">
+                <div class="small-12 medium-6 columns resultsInfo">
+                    <figure>
+                        <img src="images/starwars-logo.png" alt="logo"/>
+                    </figure>
+
+                    <p>The Star Wars API is the world's first quantified and programmatically-formatted set of Star Wars data.After hours of watching films and trawling through content online, we present to you all the People, Films, Species, Starships, Vehicles and Planets from Star Wars.</p>
+                    
+                    <button id="loadCharacters" class="expanded button">JOIN THE FORCE!</button>
+                    <ul id="results">
+                    <!-- AJAX FIRST CALL -->
+                    </ul>
+                </div>
                 <!-- AJAX SECOND CALL -->
-                <div class="small-12 medium-6 columns">
-                    <div id="characterInfo">
-                        <img class="moviePoster" src="" alt="" />
-                        <p class="movieTitle"><p>
-                        <p class="episode"></p>
-                        <p class="openingCrawl"></p>
-                        <p class="director"></p>
-                        <p class="producer"></p>
-                        <p class="releaseDate"></p>
-                    </div>
+                <div id="characterInfo" class="small-12 medium-6 columns">
+                    <img class="moviePoster" src="" alt="" />
+                    <p class="movieTitle"><p>
+                    <p class="episode"></p>
+                    <p class="openingCrawl"></p>
+                    <p class="director"></p>
+                    <p class="producer"></p>
+                    <p class="releaseDate"></p>
                 </div>
             </div>
+
         </section>
 
         <!-- JAVASCRIPTS -->

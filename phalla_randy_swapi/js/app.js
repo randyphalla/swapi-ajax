@@ -6,21 +6,24 @@ $(document).foundation();
 
 	// VARIABLES
 	var request;
+
 	var loadCharactersButton = document.querySelector('#loadCharacters');
+	
+	var resultsCont = document.querySelector('.resultsCont');
+		
 	var results = document.querySelector('#results');
-	var characterInfo = document.querySelector('#characterInfo')
+	var characterInfo = document.querySelector('#characterInfo');
+	var hideCharacterInfo;
 	var moviePoster = document.querySelector('.moviePoster');
 	var movieTitle = document.querySelector('.movieTitle');
 	var episode = document.querySelector('.episode');
 	var openingCrawl = document.querySelector('.openingCrawl');
-	var director = document.querySelector('.director');
-	var producer = document.querySelector('.producer');
-	var releaseDate = document.querySelector('.releaseDate');
+	// var director = document.querySelector('.director');
+	// var producer = document.querySelector('.producer');
+	// var releaseDate = document.querySelector('.releaseDate');
 	var url = 'http://swapi.co/api/people/?format=json';
 
 	// FUNCTIONS
-
-	
 	function showResults() {
 		request = createRequest();
 
@@ -33,16 +36,15 @@ $(document).foundation();
 		request.open("GET", url, true);
 		request.send(null);
 	};	
-	
+
 	function loadCharacters() {
 		if (request.readyState === 4 || request.readyState === "complete") {
 			var dataResponse = JSON.parse(request.responseText);
 			console.log(dataResponse);
 			// console.log(dataResponse.results.length);
 			for(var i = 0; i < dataResponse.results.length; i++) {
-				
 				results.innerHTML += '<a href="'+ dataResponse.results[i].films[0]+'?format=json"><li class="charsList">'+ dataResponse.results[i].name + '</li></a>';
-			
+				// results.innerHTML += '<a href="'+ dataResponse.results[i].films[0]+'?format=json"><img src="images/'+dataResponse.results[i].name+'.png"><p>'+ dataResponse.results[i].name + '</p></a>';
 			}
 			
 			var linkItems = results.getElementsByTagName('a');
@@ -77,17 +79,25 @@ $(document).foundation();
 			console.log(displayResponse);
 			moviePoster.src = "images/episode-"+ displayResponse.episode_id + ".jpg";
 			// console.log(moviePoster);
-			movieTitle.innerHTML = "Star Wars " + displayResponse.title;
+			movieTitle.innerHTML = displayResponse.title;
 			episode.innerHTML = "Episode: " + displayResponse.episode_id;
-			openingCrawl.innerHTML = "Opening Crawl: " + displayResponse.opening_crawl;
+			openingCrawl.innerHTML = displayResponse.opening_crawl;
 			// director.innerHTML = "Director: " + displayResponse.director;
 			// producer.innerHTML = "Producer: " + displayResponse.producer;
 			// releaseDate.innerHTML = "Release Date: " + displayResponse.release_date;
 		} 
 	};
 
-	window.onload = showResults();
+	// window.onload = showResults();
 
 	// EVENT LISTENERS
+	loadCharactersButton.addEventListener("click", function(e) {
+		showResults();
+		loadCharactersButton.innerHTML = 'WELCOME JEDI!';
+		loadCharactersButton.classList.add('fade-out');
+	}, false);
+
+
+
 
 })();
