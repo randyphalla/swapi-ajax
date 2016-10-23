@@ -13,22 +13,6 @@ body {
 	background-size: cover;
 }
 
-.fade-out {
-	background-color: black;
-	display: hidden;
-}
-
-#header {
-	background-color: $black;
-	padding-top: 20px;
-	padding-bottom: 20px;
-	text-align: center;
-	
-	img {
-		width: 150px;
-	}
-}
-
 
 #loadCharacters{
 	background-color: rgba($black, 0.63);
@@ -46,60 +30,81 @@ body {
 }
 
 
-
-.resultsInfo {
-	background-color: rgba(65, 62, 61, 0.63);
-	text-align: center;
-	padding-top: 30px;
-	
-	img {
-		width: 180px;
+.resultsCont {
+	height: 100vh;
+	.resultsInfo {
+		background-color: rgba(65, 62, 61, 0.63);
 		text-align: center;
-	}
-
-	/*
-		FIRST AJAX CALL
-	*/
-	#results {
-		list-style:none;
-		text-align: left;
-		height: 100vh;
-		margin: 0;
-		a {
-			font-size: 16px;
-			font-family: $body;
-			font-weight: 300;
-			color: #ffffff;
-			opacity: 0.5;
-			text-transform: uppercase;
-			line-height: 40px;
+		padding-top: 30px;
+		img {
+			width: 180px;
 			text-align: center;
+		}
 
-			&:hover {
-				transition: 0.2s ease-in;
-				color: $black;
-				opacity: 1;
-			}
-			li {
+		/*
+			FIRST AJAX CALL
+		*/
+		#results {
+			list-style:none;
+			text-align: left;
+			height: 100vh;
+			margin: 0;
+			a {
+				font-size: 16px;
+				font-family: $body;
+				font-weight: 300;
+				color: #ffffff;
+				opacity: 0.5;
+				text-transform: uppercase;
+				line-height: 40px;
+				text-align: center;
+
 				&:hover {
-					background-color: rgba($red, 0.63);
-					transition: 0.1s ease-in;
+					transition: 0.2s ease-in;
+					color: $black;
+					opacity: 1;
+				}
+				li {
+					&:hover {
+						background-color: rgba($red, 0.63);
+						transition: 0.1s ease-in;
+					}
 				}
 			}
 		}
 	}
-	/*
-		SECOND AJAX CALL - DETAILS
-	*/
+
 	#characterInfo {
-		p {
-			font-family: $body;
-			font-weight: 400;
-			font-size: 18px;
+		height: 100vh;
+		background-size: cover;
+		background-position: top center;
+		background-repeat: no-repeat;
+		opacity: 0.8;
+		display: flex;
+		.characterCont {
+			margin: auto 0;
+			text-align: left;
+			padding-left: 10px;
+			padding-right: 10px;
+			.movieTitle {
+				font-size: 24px;
+				font-family: $body;
+				font-weight: 300;
+				line-height: 40px;			
+			}
+			p {
+				font-size: 18px;
+				font-family: $body;
+				font-weight: 300;
+				line-height: 40px;
+			}
 		}
 	}
 }
 
+.hidden {
+	display: none;
+}
 
 /* 
 	MEDIUM and up 
@@ -107,16 +112,9 @@ body {
 
 
 @media screen and (min-width: 40em) {
+
 	.resultsInfo {
-		box-shadow: 2px 0 2px 5px rgba(0, 0, 0, 0.2);
-		/*
-			FIRST AJAX CALL
-		*/
-		#results {
-			a {
-				text-align: left;
-			}
-		}
+		// box-shadow: 2px 0 2px 5px rgba(0, 0, 0, 0.2);
 	}
 }
 

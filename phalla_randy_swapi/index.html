@@ -15,22 +15,12 @@
     <body>
         <h1 class="hidden">SWAPI Website</h1>
 
-<!--         <header id="header">
-        <h2 class="hidden">Menu</h2>
-	        <div class="row">
-	        	<div class="small-12 columns">
-                    <figure>
-                        <img src="images/starwars-logo.png" alt="logo"/>
-                    </figure>
-	        	</div>
-	        </div>
-        </header> -->
-
         <section id="mainContent">
             <h2 class="hidden">Star Wars Content</h2>
 
             <div class="row resultsCont">
-                <div class="small-12 medium-6 columns resultsInfo">
+
+                <div class="small-12 medium-6 large-6 columns resultsInfo">
                     <figure>
                         <img src="images/starwars-logo.png" alt="logo"/>
                     </figure>
@@ -42,18 +32,20 @@
                     <!-- AJAX FIRST CALL -->
                     </ul>
                 </div>
+
                 <!-- AJAX SECOND CALL -->
-                <div id="characterInfo" class="small-12 medium-6 columns">
-                    <img class="moviePoster" src="" alt="" />
-                    <p class="movieTitle"><p>
-                    <p class="episode"></p>
-                    <p class="openingCrawl"></p>
-                    <p class="director"></p>
-                    <p class="producer"></p>
-                    <p class="releaseDate"></p>
+                <div id="characterInfo" class="small-12 medium-6 large-6 columns hidden">
+                    <h2 class="hidden">Character Content</h2>
+<!--                     <figure class="moviePoster">  
+                    </figure> -->
+                    <div class="characterCont">
+                        <!-- <img class="moviePoster" src="" alt="" /> -->
+                        <span class="movieTitle"></span>
+                        <p class="episode"></p>
+                        <p class="openingCrawl"></p>
+                    </div>
                 </div>
             </div>
-
         </section>
 
         <!-- JAVASCRIPTS -->

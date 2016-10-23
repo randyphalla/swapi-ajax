@@ -6,21 +6,14 @@ $(document).foundation();
 
 	// VARIABLES
 	var request;
-
 	var loadCharactersButton = document.querySelector('#loadCharacters');
-	
 	var resultsCont = document.querySelector('.resultsCont');
-		
 	var results = document.querySelector('#results');
 	var characterInfo = document.querySelector('#characterInfo');
-	var hideCharacterInfo;
-	var moviePoster = document.querySelector('.moviePoster');
+	// var moviePoster = document.querySelector('.moviePoster');
 	var movieTitle = document.querySelector('.movieTitle');
 	var episode = document.querySelector('.episode');
 	var openingCrawl = document.querySelector('.openingCrawl');
-	// var director = document.querySelector('.director');
-	// var producer = document.querySelector('.producer');
-	// var releaseDate = document.querySelector('.releaseDate');
 	var url = 'http://swapi.co/api/people/?format=json';
 
 	// FUNCTIONS
@@ -77,14 +70,14 @@ $(document).foundation();
 		if (request.readyState == 4 || request.readyState === "complete") {
 			var displayResponse = JSON.parse(request.responseText);
 			console.log(displayResponse);
-			moviePoster.src = "images/episode-"+ displayResponse.episode_id + ".jpg";
+			// moviePoster.src = "images/episode-"+ displayResponse.episode_id + ".jpg";
+			// moviePoster.style.backgroundImage = 'url("./images/episode-'+ displayResponse.episode_id+'.jpg")';
+			characterInfo.style.backgroundImage = 'url("./images/episode-'+displayResponse.episode_id+'.jpg")';
 			// console.log(moviePoster);
 			movieTitle.innerHTML = displayResponse.title;
 			episode.innerHTML = "Episode: " + displayResponse.episode_id;
 			openingCrawl.innerHTML = displayResponse.opening_crawl;
-			// director.innerHTML = "Director: " + displayResponse.director;
-			// producer.innerHTML = "Producer: " + displayResponse.producer;
-			// releaseDate.innerHTML = "Release Date: " + displayResponse.release_date;
+			characterInfo.classList.remove('hidden');
 		} 
 	};
 
@@ -97,6 +90,8 @@ $(document).foundation();
 		loadCharactersButton.classList.add('fade-out');
 	}, false);
 
+
+	// Close Details Page
 
 
 

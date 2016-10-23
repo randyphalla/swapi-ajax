@@ -17,22 +17,6 @@ body {
   background-size: cover;
 }
 
-.fade-out {
-  background-color: black;
-  display: hidden;
-}
-
-#header {
-  background-color: #413E3D;
-  padding-top: 20px;
-  padding-bottom: 20px;
-  text-align: center;
-}
-
-#header img {
-  width: 150px;
-}
-
 #loadCharacters {
   background-color: rgba(65, 62, 61, 0.63);
   color: white;
@@ -48,31 +32,32 @@ body {
   padding: 0;
 }
 
-.resultsInfo {
+.resultsCont {
+  height: 100vh;
+}
+
+.resultsCont .resultsInfo {
   background-color: rgba(65, 62, 61, 0.63);
   text-align: center;
   padding-top: 30px;
   /*
-		FIRST AJAX CALL
-	*/
-  /*
-		SECOND AJAX CALL - DETAILS
-	*/
+			FIRST AJAX CALL
+		*/
 }
 
-.resultsInfo img {
+.resultsCont .resultsInfo img {
   width: 180px;
   text-align: center;
 }
 
-.resultsInfo #results {
+.resultsCont .resultsInfo #results {
   list-style: none;
   text-align: left;
   height: 100vh;
   margin: 0;
 }
 
-.resultsInfo #results a {
+.resultsCont .resultsInfo #results a {
   font-size: 16px;
   font-family: "Raleway", sans-serif;
   font-weight: 300;
@@ -83,38 +68,54 @@ body {
   text-align: center;
 }
 
-.resultsInfo #results a:hover {
+.resultsCont .resultsInfo #results a:hover {
   transition: 0.2s ease-in;
   color: #413E3D;
   opacity: 1;
 }
 
-.resultsInfo #results a li:hover {
+.resultsCont .resultsInfo #results a li:hover {
   background-color: rgba(237, 28, 36, 0.63);
   transition: 0.1s ease-in;
 }
 
-.resultsInfo #characterInfo p {
+.resultsCont #characterInfo {
+  height: 100vh;
+  background-size: cover;
+  background-position: top center;
+  background-repeat: no-repeat;
+  opacity: 0.8;
+  display: flex;
+}
+
+.resultsCont #characterInfo .characterCont {
+  margin: auto 0;
+  text-align: left;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.resultsCont #characterInfo .characterCont .movieTitle {
+  font-size: 24px;
   font-family: "Raleway", sans-serif;
-  font-weight: 400;
+  font-weight: 300;
+  line-height: 40px;
+}
+
+.resultsCont #characterInfo .characterCont p {
   font-size: 18px;
+  font-family: "Raleway", sans-serif;
+  font-weight: 300;
+  line-height: 40px;
+}
+
+.hidden {
+  display: none;
 }
 
 /* 
 	MEDIUM and up 
 */
-@media screen and (min-width: 40em) {
-  .resultsInfo {
-    box-shadow: 2px 0 2px 5px rgba(0, 0, 0, 0.2);
-    /*
-			FIRST AJAX CALL
-		*/
-  }
-  .resultsInfo #results a {
-    text-align: left;
-  }
-}
-
 /* 
 	Large and up 
 */
