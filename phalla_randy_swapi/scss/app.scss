@@ -1,125 +1,157 @@
 @import 'settings.scss';
 
 .hidden {
-	display: none;
+  display: none;
 }
 
 body {
-	color: white;
-	font-size: 16px;
-	font-family: $body;
-	font-weight: 300;
-	background: url(../images/background.jpg) no-repeat fixed center;
-	background-size: cover;
+  color: white;
+  font-size: 16px;
+  font-family: $body;
+  font-weight: 300;
+  background: url(../images/background.jpg) no-repeat fixed center;
+  background-size: cover;
 }
 
-
-#loadCharacters{
-	background-color: rgba($black, 0.63);
-	color: white;
-	height: 50px;
-	&:hover {
-		background-color: rgba($green, 0.5);
-	}
+#loadCharacters {
+  background-color: rgba($black, 0.63);
+  color: white;
+  height: 50px;
+  &:hover {
+    background-color: rgba($green, 0.5);
+  }
 }
-
 
 #mainContent {
-	margin: 0;
-	padding: 0;
+  margin: 0;
+  padding: 0;
 }
-
 
 .resultsCont {
-	height: 100vh;
-	.resultsInfo {
-		background-color: rgba(65, 62, 61, 0.63);
-		text-align: center;
-		padding-top: 30px;
-		img {
-			width: 180px;
-			text-align: center;
-		}
+  height: 100vh;
+  .resultsInfo {
+    background-color: rgba(65, 62, 61, 0.63);
+    text-align: center;
+    padding-top: 30px;
+    img {
+      width: 180px;
+      text-align: center;
+    }
 
-		/*
-			FIRST AJAX CALL
-		*/
-		#results {
-			list-style:none;
-			text-align: left;
-			height: 100vh;
-			margin: 0;
-			a {
-				font-size: 16px;
-				font-family: $body;
-				font-weight: 300;
-				color: #ffffff;
-				opacity: 0.5;
-				text-transform: uppercase;
-				line-height: 40px;
-				text-align: center;
+    /*
+        FIRST AJAX CALL
+    */
+    #results {
+      list-style: none;
+      text-align: left;
+      height: 100vh;
+      margin: 0;
+      a {
+        font-size: 16px;
+        font-family: $body;
+        font-weight: 300;
+        color: #ffffff;
+        -webkit-opacity: 0.5;
+        opacity: 0.5;
+        text-transform: uppercase;
+        line-height: 40px;
+        text-align: center;
 
-				&:hover {
-					transition: 0.2s ease-in;
-					color: $black;
-					opacity: 1;
-				}
-				li {
-					&:hover {
-						background-color: rgba($red, 0.63);
-						transition: 0.1s ease-in;
-					}
-				}
-			}
-		}
-	}
+        &:hover {
+          transition: 0.2s ease-in;
+          color: $black;
+          -webkit-opacity: 1;
+          opacity: 1;
+        }
+        li {
+          &:hover {
+            background-color: rgba($red, 0.63);
+            -webkit-transition: all 0.1s ease-in;
+            transition: all 0.1s ease-in;
+          }
+        }
+      }
+    }
+  }
 
-	#characterInfo {
-		height: 100vh;
-		background-size: cover;
-		background-position: top center;
-		background-repeat: no-repeat;
-		opacity: 0.8;
-		display: flex;
-		.characterCont {
-			margin: auto 0;
-			text-align: left;
-			padding-left: 10px;
-			padding-right: 10px;
-			.movieTitle {
-				font-size: 24px;
-				font-family: $body;
-				font-weight: 300;
-				line-height: 40px;			
-			}
-			p {
-				font-size: 18px;
-				font-family: $body;
-				font-weight: 300;
-				line-height: 40px;
-			}
-		}
-	}
-}
+  #characterInfo {
+    height: 100vh;
+    background-size: cover;
+    background-position: top center;
+    background-repeat: no-repeat;
+    -webkit-opacity: 0.8;
+    opacity: 0.8;
+    display: -webkit-flex;
+    display: flex;
+    .characterCont {
+      margin: auto 0;
+      text-align: left;
+      padding-left: 10px;
+      padding-right: 10px;
+      .movieTitle {
+        font-size: 20px;
+        font-family: $body;
+        font-weight: 300;
+        line-height: 40px;
+      }
+      p {
+        font-size: 16px;
+        font-family: $body;
+        font-weight: 300;
+        line-height: 40px;
+      }
+    }
+  }
 
-.hidden {
-	display: none;
 }
 
 /* 
 	MEDIUM and up 
 */
-
-
 @media screen and (min-width: 40em) {
 
-	.resultsInfo {
-		// box-shadow: 2px 0 2px 5px rgba(0, 0, 0, 0.2);
-	}
+  #mainContent {
+    .resultsInfo {
+      -webkit-box-shadow: 2px 0 2px 5px rgba(0, 0, 0, 0.2);
+      box-shadow: 2px 0 2px 5px rgba(0, 0, 0, 0.2);
+    }
+    
+    #characterInfo {
+      .characterCont {
+        .movieTitle {
+          font-size: 22px;
+        }
+        p {
+          font-size: 16px;
+        }
+      }
+    }
+
+  }
+
 }
 
-
-/* 
+/*
 	Large and up 
 */
-@media screen and (min-width: 64em) {}
+@media screen and (min-width: 64em) {
+
+  #mainContent {
+    .resultsInfo {
+      -webkit-box-shadow: 2px 0 2px 5px rgba(0, 0, 0, 0.2);
+      box-shadow: 2px 0 2px 5px rgba(0, 0, 0, 0.2);
+    }
+
+    #characterInfo {
+      .characterCont {
+        .movieTitle {
+          font-size: 24px;
+        }
+        p {
+          font-size: 20px;
+        }
+      }
+    }
+  }
+
+}

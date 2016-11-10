@@ -15,7 +15,7 @@ $(document).foundation();
 	var episode = document.querySelector('.episode');
 	var openingCrawl = document.querySelector('.openingCrawl');
 	var url = 'http://swapi.co/api/people/?format=json';
-
+	
 	// FUNCTIONS
 	function showResults() {
 		request = createRequest();
@@ -33,7 +33,7 @@ $(document).foundation();
 	function loadCharacters() {
 		if (request.readyState === 4 || request.readyState === "complete") {
 			var dataResponse = JSON.parse(request.responseText);
-			console.log(dataResponse);
+			// console.log(dataResponse);
 			// console.log(dataResponse.results.length);
 			for(var i = 0; i < dataResponse.results.length; i++) {
 				results.innerHTML += '<a href="'+ dataResponse.results[i].films[0]+'?format=json"><li class="charsList">'+ dataResponse.results[i].name + '</li></a>';
@@ -41,7 +41,6 @@ $(document).foundation();
 			}
 			
 			var linkItems = results.getElementsByTagName('a');
-			// console.log(linkItems);
 			for (var i = 0; i < linkItems.length; i++) {
 				linkItems[i].addEventListener('click', function(e) {
 					e.preventDefault();
@@ -52,7 +51,7 @@ $(document).foundation();
 	};
 
 	function displayInfo(id) {
-		console.log("ID: " + id);
+		// console.log("ID: " + id);
 		request = createRequest();
 
 		if (request === null) {
@@ -69,11 +68,8 @@ $(document).foundation();
 	function displayStatus() {
 		if (request.readyState == 4 || request.readyState === "complete") {
 			var displayResponse = JSON.parse(request.responseText);
-			console.log(displayResponse);
-			// moviePoster.src = "images/episode-"+ displayResponse.episode_id + ".jpg";
-			// moviePoster.style.backgroundImage = 'url("./images/episode-'+ displayResponse.episode_id+'.jpg")';
+			// console.log(displayResponse);
 			characterInfo.style.backgroundImage = 'url("./images/episode-'+displayResponse.episode_id+'.jpg")';
-			// console.log(moviePoster);
 			movieTitle.innerHTML = displayResponse.title;
 			episode.innerHTML = "Episode: " + displayResponse.episode_id;
 			openingCrawl.innerHTML = displayResponse.opening_crawl;
@@ -81,7 +77,6 @@ $(document).foundation();
 		} 
 	};
 
-	// window.onload = showResults();
 
 	// EVENT LISTENERS
 	loadCharactersButton.addEventListener("click", function(e) {
@@ -89,10 +84,6 @@ $(document).foundation();
 		loadCharactersButton.innerHTML = 'WELCOME JEDI!';
 		loadCharactersButton.classList.add('fade-out');
 	}, false);
-
-
-	// Close Details Page
-
 
 
 })();

@@ -41,8 +41,8 @@ body {
   text-align: center;
   padding-top: 30px;
   /*
-			FIRST AJAX CALL
-		*/
+        FIRST AJAX CALL
+    */
 }
 
 .resultsCont .resultsInfo img {
@@ -62,6 +62,7 @@ body {
   font-family: "Raleway", sans-serif;
   font-weight: 300;
   color: #ffffff;
+  -webkit-opacity: 0.5;
   opacity: 0.5;
   text-transform: uppercase;
   line-height: 40px;
@@ -71,12 +72,14 @@ body {
 .resultsCont .resultsInfo #results a:hover {
   transition: 0.2s ease-in;
   color: #413E3D;
+  -webkit-opacity: 1;
   opacity: 1;
 }
 
 .resultsCont .resultsInfo #results a li:hover {
   background-color: rgba(237, 28, 36, 0.63);
-  transition: 0.1s ease-in;
+  -webkit-transition: all 0.1s ease-in;
+  transition: all 0.1s ease-in;
 }
 
 .resultsCont #characterInfo {
@@ -84,7 +87,9 @@ body {
   background-size: cover;
   background-position: top center;
   background-repeat: no-repeat;
+  -webkit-opacity: 0.8;
   opacity: 0.8;
+  display: -webkit-flex;
   display: flex;
 }
 
@@ -96,26 +101,47 @@ body {
 }
 
 .resultsCont #characterInfo .characterCont .movieTitle {
-  font-size: 24px;
+  font-size: 20px;
   font-family: "Raleway", sans-serif;
   font-weight: 300;
   line-height: 40px;
 }
 
 .resultsCont #characterInfo .characterCont p {
-  font-size: 18px;
+  font-size: 16px;
   font-family: "Raleway", sans-serif;
   font-weight: 300;
   line-height: 40px;
 }
 
-.hidden {
-  display: none;
-}
-
 /* 
 	MEDIUM and up 
 */
-/* 
+@media screen and (min-width: 40em) {
+  #mainContent .resultsInfo {
+    -webkit-box-shadow: 2px 0 2px 5px rgba(0, 0, 0, 0.2);
+    box-shadow: 2px 0 2px 5px rgba(0, 0, 0, 0.2);
+  }
+  #mainContent #characterInfo .characterCont .movieTitle {
+    font-size: 22px;
+  }
+  #mainContent #characterInfo .characterCont p {
+    font-size: 16px;
+  }
+}
+
+/*
 	Large and up 
 */
+@media screen and (min-width: 64em) {
+  #mainContent .resultsInfo {
+    -webkit-box-shadow: 2px 0 2px 5px rgba(0, 0, 0, 0.2);
+    box-shadow: 2px 0 2px 5px rgba(0, 0, 0, 0.2);
+  }
+  #mainContent #characterInfo .characterCont .movieTitle {
+    font-size: 24px;
+  }
+  #mainContent #characterInfo .characterCont p {
+    font-size: 20px;
+  }
+}
