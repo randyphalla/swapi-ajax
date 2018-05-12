@@ -1,1 +1,2 @@
-# swapi-ajax
+# SWAPI (Star Wars API)
+

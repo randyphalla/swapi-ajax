@@ -1,0 +1,1 @@
+console.log("SWAPI API INIT");
