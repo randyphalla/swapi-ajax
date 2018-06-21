@@ -1,12 +1,19 @@
+$BLACK_COLOR: #131314;
+$YELLOW_COLOR: #F7E74B;
+$WHITE_COLOR: #ffffff;
+$GREY_COLOR: #E4E5E3;
+
 body {
-    color: #242424;
+    color: $YELLOW_COLOR;
     font-family: 'Noto Sans', sans-serif;
     font-weight: 400;
+    background-color: $BLACK_COLOR;
 }
 
 h1 {
     font-family: 'Noto Sans', sans-serif;
     font-weight: 700;
+    text-align: center;
 }
 
 p {
@@ -29,10 +36,27 @@ ul {
     .character-item {
         margin-top: 30px;
         margin-bottom: 30px;
-    
+        padding: 10px;
+        
         a {
-            padding: 10px;
-            background-color: red;
+            width: 100%;
+            // padding: 10px;
+            background-color: $BLACK_COLOR;
+            color: $WHITE_COLOR;
+            text-decoration: none;
+
+            font-family: 'Noto Sans', sans-serif;
+            font-weight: 400;
+        }
+
+        &:hover {
+            background-color: $GREY_COLOR;
+            border-radius: 5px;
+
+            a {
+                color: $BLACK_COLOR;
+                background-color: $GREY_COLOR;
+            }
         }
     }
 }

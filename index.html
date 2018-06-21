@@ -2,35 +2,50 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>SWAPI - FETCH API</title>
-    <link href="https://fonts.googleapis.com/css?family=Noto+Sans:400,700" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Sans:400,700">
+    <link rel="stylesheet" href="./assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="./assets/css/main.css"/>
 </head>
 <body>
     <main class="main-content"> 
-        
-        <h1>SWAPI</h1>
+        <header>
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-4">
+                        <h1>SWAPI</h1>
+                    </div>
+                </div>
+            </div>
+        </header>
 
         <!-- Get list of characters -->
         <section class="characters-list">
-            <ul id="results"></ul>
+            <div class="container">
+                <ul id="results"></ul>
+            </div>
         </section>
         
-
+        <!-- Get character info -->
         <section class="character-cont">
-            <p class="character-name"></p>
-            <p class="birth-year"></p>
-            <p class="eye-color"></p>
-            <p class="gender"></p>
-            <p class="hair-color"></p>
-            <p class="mass"></p>
-            <p class="height"></p>
-            <p class="skin-color"></p>
+            <div class="container">
+                <p class="character-name"></p>
+                <p class="birth-year"></p>
+                <p class="eye-color"></p>
+                <p class="gender"></p>
+                <p class="hair-color"></p>
+                <p class="mass"></p>
+                <p class="height"></p>
+                <p class="skin-color"></p>
+            </div>
         </section>
 
     </main>
+    <script src="./assets/jsjquery-3.3.1.slim.min.js"></script>
+    <script src="./assets/js/popper.min.js"></script>
+    <script src="./assets/js/bootstrap.min.js"></script>
     <script src="./assets/js/main.js"></script>
 </body>
 </html>

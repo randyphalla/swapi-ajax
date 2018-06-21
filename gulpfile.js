@@ -5,7 +5,7 @@ const browserify = require('gulp-browserify');
 
 // Compile sass into CSS & auto-inject into browsers
 gulp.task('sass', function () {
-    return gulp.src("assets/scss/*.scss")
+    return gulp.src("assets/scss/main.scss")
         .pipe(sass())
         .pipe(gulp.dest("assets/css"))
         .pipe(gulp.dest("dist/css"))
@@ -14,7 +14,7 @@ gulp.task('sass', function () {
 
 // process JS files and return the stream.
 gulp.task('js', function () {
-    return gulp.src('assets/js/*js')
+    return gulp.src('assets/js/main.js')
         .pipe(browserify())
         .pipe(gulp.dest('dist/js'));
 });

@@ -1,11 +1,12 @@
 (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);throw new Error("Cannot find module '"+o+"'")}var f=n[o]={exports:{}};t[o][0].call(f.exports,function(e){var n=t[o][1][e];return s(n?n:e)},f,f.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
 (function() {
-    // console.log("SWAPI API INIT");
+    console.log("SWAPI API INIT");
 
     const uri = 'https://swapi.co/api/';
     const formatJSON = '/?format=json';
 
     const results = document.querySelector('#results');
+    const characterImage = document.querySelector('.character-image');
     const characterName = document.querySelector('.character-name');
     const birthYear = document.querySelector('.birth-year');;
     const eyeColor = document.querySelector('.eye-color');
@@ -16,7 +17,6 @@
     const skinColor = document.querySelector('.skin-color');
 
     function getCharacters() {
-        // console.log('Get Characters');
 
         fetch(uri + 'people' + formatJSON)
             .then(function(res) {
@@ -27,19 +27,11 @@
                     console.log("Error");
                 }
 
-                // console.log(res.json());
                 res.json().then(function(data) {
-                    // console.log(data.results);
-                    const characterResults = data.results;
-                    // console.log('Characters: ', characterResults);
-                    
-                    // characterResults.forEach(function(res) {
-                    //     // console.log(res);
-                    //     results.innerHTML += '<li class="character-item"><a href="'+ res.uri +'">' + res.name + '</a></li>';
-                    // });
 
+                    const characterResults = data.results;
+                    
                     for(var i = 0; i < characterResults.length; i++) {
-                        // console.log(characterResults);
                         results.innerHTML += '<li class="character-item"><a href="'+  characterResults[i].url +'" >' + characterResults[i].name + '</a></li>';
                     }
 
@@ -61,11 +53,7 @@
     }
 
     function getCharacterInfo(id) {
-        // console.log(id);
-        const characterID = id;
-        // console.log(characterID);
-
-        fetch(characterID)
+        fetch(id)
             .then(function(res) {
                 console.log(res);
 
@@ -77,6 +65,7 @@
                 
                 res.json().then(function(data) {
                     console.log(data);        
+                    // characterImage.innerHTML = data.name;
                     characterName.innerHTML = data.name;   
                     birthYear.innerHTML = data.birth_year;   
                     eyeColor.innerHTML = data.eye_color;   

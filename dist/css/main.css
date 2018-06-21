@@ -1,11 +1,13 @@
 body {
-  color: #242424;
+  color: #F7E74B;
   font-family: 'Noto Sans', sans-serif;
-  font-weight: 400; }
+  font-weight: 400;
+  background-color: #131314; }
 
 h1 {
   font-family: 'Noto Sans', sans-serif;
-  font-weight: 700; }
+  font-weight: 700;
+  text-align: center; }
 
 p {
   font-family: 'Noto Sans', sans-serif;
@@ -21,7 +23,18 @@ ul li {
   margin: 0; }
   #results .character-item {
     margin-top: 30px;
-    margin-bottom: 30px; }
+    margin-bottom: 30px;
+    padding: 10px; }
     #results .character-item a {
-      padding: 10px;
-      background-color: red; }
+      width: 100%;
+      background-color: #131314;
+      color: #ffffff;
+      text-decoration: none;
+      font-family: 'Noto Sans', sans-serif;
+      font-weight: 400; }
+    #results .character-item:hover {
+      background-color: #E4E5E3;
+      border-radius: 5px; }
+      #results .character-item:hover a {
+        color: #131314;
+        background-color: #E4E5E3; }
