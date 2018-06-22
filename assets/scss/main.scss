@@ -19,6 +19,7 @@ h1 {
 p {
     font-family: 'Noto Sans', sans-serif;
     font-weight: 400;
+    letter-spacing: 0.5px;
 }
 
 ul {
@@ -28,35 +29,67 @@ ul {
     }
 }
 
+.header {
+    background-color: #050506;
+    .logo {
+        padding-top: 20px;
+        padding-bottom: 20px;
+        text-align: center;
+        
+        img {
+            width: 100px;
+        }
+    }
+}
+
+.character-content {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
 #results {
     list-style-type: none;
     padding-left: 0;
     margin: 0;
 
     .character-item {
-        margin-top: 30px;
-        margin-bottom: 30px;
-        padding: 10px;
-        
+        padding: 15px;
+        border-bottom: 1px solid rgba($GREY_COLOR, 0.1);
+
         a {
             width: 100%;
-            // padding: 10px;
-            background-color: $BLACK_COLOR;
             color: $WHITE_COLOR;
             text-decoration: none;
 
             font-family: 'Noto Sans', sans-serif;
-            font-weight: 400;
+            font-weight: 700;
+
+            letter-spacing: 1px;
+
+            span {
+                font-family: 'Noto Sans', sans-serif;
+                font-weight: 400;
+            }
         }
 
         &:hover {
-            background-color: $GREY_COLOR;
-            border-radius: 5px;
-
-            a {
-                color: $BLACK_COLOR;
-                background-color: $GREY_COLOR;
-            }
+            background-color: rgba($GREY_COLOR, 0.1);
         }
     }
+
+    @media screen and (min-width: 1200px) {
+        text-align: center;
+
+        .character-item {
+            display: inline-flex;
+            margin-top: 5px;
+            margin-bottom: 5px;
+            padding: 5px 30px;
+            border-bottom: 1px solid transparent;
+        }
+    }
+}
+
+.character-info {
+    margin-top: 20px;
 }

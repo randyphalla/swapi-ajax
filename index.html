@@ -4,44 +4,42 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>SWAPI - FETCH API</title>
+    <title>Star Wars - Characters</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Sans:400,700">
     <link rel="stylesheet" href="./assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="./assets/css/main.css"/>
 </head>
 <body>
     <main class="main-content"> 
-        <header>
-            <div class="container">
-                <div class="row justify-content-center">
-                    <div class="col-4">
-                        <h1>SWAPI</h1>
-                    </div>
+        <header class="header">
+            <div class="row justify-content-center">
+                <div class="col logo">
+                    <img src="./assets/images//Star_Wars_logo_logotype_Yellow.png" alt="Star Wars Logo" />
                 </div>
             </div>
         </header>
 
-        <!-- Get list of characters -->
-        <section class="characters-list">
+        <section class="character-content">
             <div class="container">
-                <ul id="results"></ul>
+                <div class="row">
+                    <div class="col-sm-12 col-md-6 col-lg-4 col-xl-12 characters-list">
+                        <!-- Get list of characters -->
+                        <ul id="results"></ul>
+                    </div>
+                    <div class="col-sm-12 col-md-6 col-lg-8 col-xl-12 character-info">
+                        <!-- Get character info -->
+                        <p class="character-name"></p>
+                        <p class="birth-year"></p>
+                        <p class="eye-color"></p>
+                        <p class="gender"></p>
+                        <p class="hair-color"></p>
+                        <p class="mass"></p>
+                        <p class="height"></p>
+                        <p class="skin-color"></p>
+                    </div>
+                </div>
             </div>
         </section>
-        
-        <!-- Get character info -->
-        <section class="character-cont">
-            <div class="container">
-                <p class="character-name"></p>
-                <p class="birth-year"></p>
-                <p class="eye-color"></p>
-                <p class="gender"></p>
-                <p class="hair-color"></p>
-                <p class="mass"></p>
-                <p class="height"></p>
-                <p class="skin-color"></p>
-            </div>
-        </section>
-
     </main>
     <script src="./assets/jsjquery-3.3.1.slim.min.js"></script>
     <script src="./assets/js/popper.min.js"></script>

@@ -22,7 +22,7 @@
             .then(function(res) {
 
                 if (res) {
-                    console.log("Success: ");
+                    console.log("Success");
                 } else {
                     console.log("Error");
                 }
@@ -32,7 +32,7 @@
                     const characterResults = data.results;
                     
                     for(var i = 0; i < characterResults.length; i++) {
-                        results.innerHTML += '<li class="character-item"><a href="'+  characterResults[i].url +'" >' + characterResults[i].name + '</a></li>';
+                        results.innerHTML += '<li class="character-item"><a href="'+  characterResults[i].url +'" >' + characterResults[i].name + "<br><span>" + characterResults[i].gender + '</span></a></li>';
                     }
 
                     const linkItems = document.getElementsByTagName('a');
@@ -55,7 +55,6 @@
     function getCharacterInfo(id) {
         fetch(id)
             .then(function(res) {
-                console.log(res);
 
                 if (res) {
                     console.log('Success');
@@ -64,16 +63,15 @@
                 }
                 
                 res.json().then(function(data) {
-                    console.log(data);        
                     // characterImage.innerHTML = data.name;
-                    characterName.innerHTML = data.name;   
-                    birthYear.innerHTML = data.birth_year;   
-                    eyeColor.innerHTML = data.eye_color;   
-                    gender.innerHTML = data.gender;   
-                    hairColor.innerHTML = data.hair_color;   
-                    height.innerHTML = data.height;   
-                    mass.innerHTML = data.mass;   
-                    skinColor.innerHTML = data.skin_color;            
+                    characterName.innerHTML = "Name: " + data.name;   
+                    birthYear.innerHTML = "Birth year: " + data.birth_year;   
+                    eyeColor.innerHTML = "Eye color: " + data.eye_color;   
+                    gender.innerHTML = "Gender: " + data.gender;   
+                    hairColor.innerHTML = "Hair Color: " + data.hair_color;   
+                    height.innerHTML = "Height: " + data.height;   
+                    mass.innerHTML = "Mass: " + data.mass;   
+                    skinColor.innerHTML = "Skin Color: " + data.skin_color;            
                 })
                 .catch(function(err) {
                     console.log(err);
