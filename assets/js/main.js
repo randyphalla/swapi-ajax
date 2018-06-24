@@ -31,7 +31,7 @@
                     const characterResults = data.results;
                     
                     for(var i = 0; i < characterResults.length; i++) {
-                        results.innerHTML += '<li class="character-item"><a href="'+  characterResults[i].url +'" >' + characterResults[i].name + "<br><span>" + characterResults[i].gender + '</span></a></li>';
+                        results.innerHTML += '<li class="character-item"> <a href="' +  characterResults[i].url + '">' +  "<img class='avatar' src='../assets/images/" + characterResults[i].name + ".png' /> <div class='character-info'>" + characterResults[i].name + "<br> <span>" + characterResults[i].gender + '</span> </div> </a> </li>';
                     }
 
                     const linkItems = document.getElementsByTagName('a');
@@ -62,7 +62,7 @@
                 }
                 
                 res.json().then(function(data) {
-                    // characterImage.innerHTML = data.name;
+                    characterImage.innerHTML = "<img src='../assets/images/" + data.name + ".png'/>";
                     characterName.innerHTML = "Name: " + data.name;   
                     birthYear.innerHTML = "Birth year: " + data.birth_year;   
                     eyeColor.innerHTML = "Eye color: " + data.eye_color;   

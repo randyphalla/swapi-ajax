@@ -1,7 +1,4 @@
-$BLACK_COLOR: #131314;
-$YELLOW_COLOR: #F7E74B;
-$WHITE_COLOR: #ffffff;
-$GREY_COLOR: #E4E5E3;
+@import 'shared';
 
 body {
     color: $YELLOW_COLOR;
@@ -22,15 +19,18 @@ p {
     letter-spacing: 0.5px;
 }
 
-ul {
-    li {
-        font-family: 'Noto Sans', sans-serif;
-        font-weight: 400;
-    }
+.hidden {
+    display: none;
+}
+
+.row {
+    margin-left: 0;
+    margin-right: 0;
 }
 
 .header {
-    background-color: #050506;
+    background-color: $BLACK_SEC_COLOR;
+
     .logo {
         padding-top: 20px;
         padding-bottom: 20px;
@@ -57,14 +57,16 @@ ul {
         border-bottom: 1px solid rgba($GREY_COLOR, 0.1);
 
         a {
-            width: 100%;
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-start;
+        
             color: $WHITE_COLOR;
             text-decoration: none;
-
             font-family: 'Noto Sans', sans-serif;
             font-weight: 700;
-
             letter-spacing: 1px;
+            align-items: center;
 
             span {
                 font-family: 'Noto Sans', sans-serif;
@@ -75,6 +77,15 @@ ul {
         &:hover {
             background-color: rgba($GREY_COLOR, 0.1);
         }
+
+        .avatar {
+            width: 50px;
+        }
+
+        .character-info {
+            margin-left: 10px;
+        }
+
     }
 
     @media screen and (min-width: 1200px) {
@@ -82,14 +93,88 @@ ul {
 
         .character-item {
             display: inline-flex;
+
             margin-top: 5px;
             margin-bottom: 5px;
             padding: 5px 30px;
+
             border-bottom: 1px solid transparent;
+
+            a {
+                flex-direction: column;
+            }
+
+            .avatar {
+                margin-bottom: 10px;
+            }
+
+            &:hover {
+                border-radius: 15px;
+            }
         }
     }
 }
 
-.character-info {
-    margin-top: 20px;
+.character-display {
+    margin-top: 50px;
+    margin-bottom: 50px;
+
+    .character-image {
+        margin-bottom: 20px;
+
+        img {
+            width: 100%;
+        }
+    }
+
+    p {
+        text-align: center;
+    }
+
+    @media screen and (min-width: 768px) {
+        margin-top: 0;
+    }
+
+    @media screen and (min-width: 992px) {
+        .row {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-content: center;
+            align-items: center;
+        }
+    }
+
+    @media screen and (min-width: 1200px) {
+        margin-top: 100px;
+        margin-bottom: 100px;
+
+        .character-image {    
+            text-align: right;
+            img {
+                width: 300px;
+            }
+        }
+
+        .row {
+            flex-direction: row;
+        }
+
+        p {
+            text-align: left;
+        }
+    }
+
+}
+
+.footer {
+    padding: 16px;
+    text-align: center;
+    background-color: $BLACK_SEC_COLOR;
+    
+    p {
+        margin: 0;
+        padding: 0;
+        color: $WHITE_COLOR;
+    }
 }

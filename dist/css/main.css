@@ -14,9 +14,12 @@ p {
   font-weight: 400;
   letter-spacing: 0.5px; }
 
-ul li {
-  font-family: 'Noto Sans', sans-serif;
-  font-weight: 400; }
+.hidden {
+  display: none; }
+
+.row {
+  margin-left: 0;
+  margin-right: 0; }
 
 .header {
   background-color: #050506; }
@@ -39,17 +42,24 @@ ul li {
     padding: 15px;
     border-bottom: 1px solid rgba(228, 229, 227, 0.1); }
     #results .character-item a {
-      width: 100%;
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-start;
       color: #ffffff;
       text-decoration: none;
       font-family: 'Noto Sans', sans-serif;
       font-weight: 700;
-      letter-spacing: 1px; }
+      letter-spacing: 1px;
+      align-items: center; }
       #results .character-item a span {
         font-family: 'Noto Sans', sans-serif;
         font-weight: 400; }
     #results .character-item:hover {
       background-color: rgba(228, 229, 227, 0.1); }
+    #results .character-item .avatar {
+      width: 50px; }
+    #results .character-item .character-info {
+      margin-left: 10px; }
   @media screen and (min-width: 1200px) {
     #results {
       text-align: center; }
@@ -58,7 +68,51 @@ ul li {
         margin-top: 5px;
         margin-bottom: 5px;
         padding: 5px 30px;
-        border-bottom: 1px solid transparent; } }
+        border-bottom: 1px solid transparent; }
+        #results .character-item a {
+          flex-direction: column; }
+        #results .character-item .avatar {
+          margin-bottom: 10px; }
+        #results .character-item:hover {
+          border-radius: 15px; } }
 
-.character-info {
-  margin-top: 20px; }
+.character-display {
+  margin-top: 50px;
+  margin-bottom: 50px; }
+  .character-display .character-image {
+    margin-bottom: 20px; }
+    .character-display .character-image img {
+      width: 100%; }
+  .character-display p {
+    text-align: center; }
+  @media screen and (min-width: 768px) {
+    .character-display {
+      margin-top: 0; } }
+  @media screen and (min-width: 992px) {
+    .character-display .row {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-content: center;
+      align-items: center; } }
+  @media screen and (min-width: 1200px) {
+    .character-display {
+      margin-top: 100px;
+      margin-bottom: 100px; }
+      .character-display .character-image {
+        text-align: right; }
+        .character-display .character-image img {
+          width: 300px; }
+      .character-display .row {
+        flex-direction: row; }
+      .character-display p {
+        text-align: left; } }
+
+.footer {
+  padding: 16px;
+  text-align: center;
+  background-color: #050506; }
+  .footer p {
+    margin: 0;
+    padding: 0;
+    color: #ffffff; }

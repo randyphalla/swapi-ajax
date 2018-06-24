@@ -5,7 +5,7 @@ const browserify = require('gulp-browserify');
 
 // Compile sass into CSS & auto-inject into browsers
 gulp.task('sass', function () {
-    return gulp.src("assets/scss/main.scss")
+    return gulp.src("assets/scss/*.scss")
         .pipe(sass())
         .pipe(gulp.dest("assets/css"))
         .pipe(gulp.dest("dist/css"))
