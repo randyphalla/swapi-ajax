@@ -1,5 +1,4 @@
 (function() {
-    console.log("SWAPI API INIT");
 
     const uri = 'https://swapi.co/api/';
     const formatJSON = '/?format=json';
@@ -21,28 +20,28 @@
             .then(function(res) {
 
                 if (res) {
-                    console.log("Success");
+
+                    res.json().then(function(data) {
+
+                        const characterResults = data.results;
+                        
+                        for(var i = 0; i < characterResults.length; i++) {
+                            results.innerHTML += '<li class="character-item"> <a href="' +  characterResults[i].url + '">' +  "<img class='avatar' src='./assets/images/" + characterResults[i].name + ".png' /> <div class='character-info'>" + characterResults[i].name + "<br> <span>" + characterResults[i].gender + '</span> </div> </a> </li>';
+                        }
+    
+                        const linkItems = document.getElementsByTagName('a');
+                        for (var i = 0; i < linkItems.length; i++) {
+                            linkItems[i].addEventListener('click', function(e) {
+                                e.preventDefault();
+                                getCharacterInfo(this.getAttribute('href'));
+                            })
+                        }
+    
+                    });
+
                 } else {
                     console.log("Error");
                 }
-
-                res.json().then(function(data) {
-
-                    const characterResults = data.results;
-                    
-                    for(var i = 0; i < characterResults.length; i++) {
-                        results.innerHTML += '<li class="character-item"> <a href="' +  characterResults[i].url + '">' +  "<img class='avatar' src='../assets/images/" + characterResults[i].name + ".png' /> <div class='character-info'>" + characterResults[i].name + "<br> <span>" + characterResults[i].gender + '</span> </div> </a> </li>';
-                    }
-
-                    const linkItems = document.getElementsByTagName('a');
-                    for (var i = 0; i < linkItems.length; i++) {
-                        linkItems[i].addEventListener('click', function(e) {
-                            e.preventDefault();
-                            getCharacterInfo(this.getAttribute('href'));
-                        })
-                    }
-
-                });
 
             })
             .catch(function(err) {
@@ -56,26 +55,26 @@
             .then(function(res) {
 
                 if (res) {
-                    console.log('Success');
+
+                    res.json().then(function(data) {
+                        characterImage.innerHTML = "<img src='./assets/images/" + data.name + ".png'/>";
+                        characterName.innerHTML = "Name: " + data.name;   
+                        birthYear.innerHTML = "Birth year: " + data.birth_year;   
+                        eyeColor.innerHTML = "Eye color: " + data.eye_color;   
+                        gender.innerHTML = "Gender: " + data.gender;   
+                        hairColor.innerHTML = "Hair Color: " + data.hair_color;   
+                        height.innerHTML = "Height: " + data.height;   
+                        mass.innerHTML = "Mass: " + data.mass;   
+                        skinColor.innerHTML = "Skin Color: " + data.skin_color;            
+                    })
+                    .catch(function(err) {
+                        console.log(err);
+                    })
+
                 } else {
                     console.log('Error');
                 }
                 
-                res.json().then(function(data) {
-                    characterImage.innerHTML = "<img src='../assets/images/" + data.name + ".png'/>";
-                    characterName.innerHTML = "Name: " + data.name;   
-                    birthYear.innerHTML = "Birth year: " + data.birth_year;   
-                    eyeColor.innerHTML = "Eye color: " + data.eye_color;   
-                    gender.innerHTML = "Gender: " + data.gender;   
-                    hairColor.innerHTML = "Hair Color: " + data.hair_color;   
-                    height.innerHTML = "Height: " + data.height;   
-                    mass.innerHTML = "Mass: " + data.mass;   
-                    skinColor.innerHTML = "Skin Color: " + data.skin_color;            
-                })
-                .catch(function(err) {
-                    console.log(err);
-                })
-
             })
             .catch(function(err) {
                 console.log('Error', err);
@@ -83,6 +82,6 @@
 
     }
 
-    getCharacters(); // Load Characters
+    getCharacters();
 
 })();
