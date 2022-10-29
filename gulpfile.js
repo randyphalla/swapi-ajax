@@ -1,39 +1,43 @@
 const gulp = require('gulp');
+const sourcemaps = require('gulp-sourcemaps');
+const sass = require('gulp-sass')(require('sass'));
+const uglify = require('gulp-uglify');
 const browserSync = require('browser-sync').create();
-const sass = require('gulp-sass');
-const browserify = require('gulp-browserify');
+// const browserify = require('gulp-browserify');
 
-// Compile sass into CSS & auto-inject into browsers
-gulp.task('sass', function () {
-    return gulp.src("assets/scss/*.scss")
-        .pipe(sass())
-        .pipe(gulp.dest("assets/css"))
-        .pipe(gulp.dest("dist/css"))
-        .pipe(browserSync.stream());
+gulp.task('sass', async function() {
+  return gulp.src('assets/scss/*.scss')
+    .pipe(sourcemaps.init())
+    .pipe(sass.sync({outputStyle: 'expanded'}).on('error', sass.logError))
+    .pipe(gulp.dest('assets/css'))
+    .pipe(sass.sync({outputStyle: 'compressed'}).on('error', sass.logError))
+    .pipe(sourcemaps.write())
+    .pipe(gulp.dest('dist/css'))
+    .pipe(browserSync.stream());
 });
 
-// process JS files and return the stream.
-gulp.task('js', function () {
-    return gulp.src('assets/js/main.js')
-        .pipe(browserify())
-        .pipe(gulp.dest('dist/js'));
-});
+function bundleJS() {
+  return gulp.src('assets/js/*.js')
+    .pipe(uglify())
+    .pipe(gulp.dest('dist/js/'));
+}
 
-gulp.task('js-watch', ['js'], function (done) {
-    browserSync.reload();
-    done();
-});
+function watch() {
+  browserSync.init({
+    open: false,
+    browser: "google chrome",
+    server: {
+      baseDir: "./",
+    }
+  });
 
-// Static Server + watching scss/html files
-gulp.task('serve', ['sass', 'js', 'js-watch'], function () {
+  gulp.watch('assets/js/*.js', bundleJS).on('change', browserSync.reload);
+  gulp.watch('*.html').on('change', browserSync.reload);
+  gulp.watch("assets/scss/*.scss", gulp.series('sass'));
+}
 
-    browserSync.init({
-        server: ""
-    });
+// TODO: bundle css into dist
+// TODO: bundle assets (images)
 
-    gulp.watch("assets/js/*.js", ['js-watch']);
-    gulp.watch("assets/scss/*.scss", ['sass']);
-    gulp.watch("*.html").on('change', browserSync.reload);
-});
-
-gulp.task('default', ['serve']);
+exports.bundleJS = bundleJS;
+exports.watch = watch;

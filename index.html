@@ -1,63 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Star Wars - Characters</title>
+    <title>Characters | SWAPI</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Sans:400,700">
     <link rel="stylesheet" href="./assets/css/bootstrap.min.css">
-    <link rel="stylesheet" href="./assets/css/main.css"/>
-</head>
-<body>
-    <main class="main-content"> 
-        <h1 class="hidden">Main Content</h1>
-        <header class="header">
-            <h2 class="hidden">Header</h2>
-            <div class="row justify-content-center">
-                <div class="col logo">
-                    <img src="./assets/images//Star_Wars_logo_logotype_Yellow.png" alt="Star Wars Logo" />
-                </div>
+    <link rel="stylesheet" href="./assets/css/main.css" />
+  </head>
+  <body>
+    <main class="main-content">
+      <h1 class="hidden">Main Content</h1>
+      <header class="header">
+        <h2 class="hidden">Header</h2>
+        <div class="row justify-content-center">
+          <div class="col logo">
+            <img src="./assets/images//Star_Wars_logo_logotype_Yellow.png" alt="Star Wars" />
+          </div>
+        </div>
+      </header>
+      <section class="character-content">
+        <h2 class="hidden">Character Content</h2>
+        <div class="container">
+          <div class="row">
+            <div class="col-sm-12 col-md-6 col-lg-4 col-xl-12 characters-list">
+              <ul id="results"></ul>
             </div>
-        </header>
-
-        <section class="character-content">
-            <h2 class="hidden">Character Content</h2>
-            <div class="container">
-                <div class="row">
-                    <div class="col-sm-12 col-md-6 col-lg-4 col-xl-12 characters-list">
-                        <ul id="results"></ul>
-                    </div>
-                    <div class="col-sm-12 col-md-6 col-lg-8 col-xl-12 character-display">
-                        <div class="row">
-                            <div class="col-sm-12 col-xl-6">                        
-                                <div class="character-image"></div>
-                            </div>
-                            <div class="col-sm-12 col-xl-6">
-                                <p class="character-name"></p>
-                                <p class="birth-year"></p>
-                                <p class="eye-color"></p>
-                                <p class="gender"></p>
-                                <p class="hair-color"></p>
-                                <p class="mass"></p>
-                                <p class="height"></p>
-                                <p class="skin-color"></p>
-                            </div>
-                        </div>
-                    </div>
+            <div class="col-sm-12 col-md-6 col-lg-8 col-xl-12 character-display">
+              <div class="row">
+                <div class="col-sm-12 col-xl-6">
+                  <div class="character-image"></div>
                 </div>
+                <div class="col-sm-12 col-xl-6">
+                  <p class="character-name"></p>
+                  <p class="birth-year"></p>
+                  <p class="eye-color"></p>
+                  <p class="gender"></p>
+                  <p class="hair-color"></p>
+                  <p class="mass"></p>
+                  <p class="height"></p>
+                  <p class="skin-color"></p>
+                </div>
+              </div>
             </div>
-        </section>
-
-        <footer class="footer">
-            <h2 class="hidden">Footer Section</h2>
-            <p>&copy; 2018 - Randy Phalla Design</p>
-        </footer>
-
+          </div>
+        </div>
+      </section>
+      <footer class="footer">
+        <h2 class="hidden">Footer Section</h2>
+        <p>&copy; 2022 - Randy Phalla</p>
+      </footer>
     </main>
     <script src="./assets/js/jquery-3.3.1.slim.min.js"></script>
     <script src="./assets/js/popper.min.js"></script>
     <script src="./assets/js/bootstrap.min.js"></script>
     <script src="./assets/js/main.js"></script>
-</body>
+  </body>
 </html>
