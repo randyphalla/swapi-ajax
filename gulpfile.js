@@ -3,7 +3,6 @@ const sourcemaps = require('gulp-sourcemaps');
 const sass = require('gulp-sass')(require('sass'));
 const uglify = require('gulp-uglify');
 const browserSync = require('browser-sync').create();
-// const browserify = require('gulp-browserify');
 
 gulp.task('sass', async function() {
   return gulp.src('assets/scss/*.scss')
